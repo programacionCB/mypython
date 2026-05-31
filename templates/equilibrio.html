@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+
+{% block title %} {{data.titulo}} {% endblock %}
+
+{% block body %}
+
+<img src={{ image_file}} width="550" height="400">
+
+{# calculos fisica #}
+
+        {# formulas de ley de los senos #}
+        {% set W = data.W/round(sin(data.Wg*pi/180))%}
+        {% set TA = round(sin(data.TA*pi/180)*W,4) %}
+        {% set TB = round(sin(data.TB*pi/180)*W,4) %}
+        
+
+        <h1>La tensión en A es: {{TA}}</h1>
+        
+        <h2>La tensión en B es: {{TB}}</h2>
+
+
+
+{% endblock %}

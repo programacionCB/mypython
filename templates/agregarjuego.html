@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+
+{% block title %} Insertar datos {% endblock %}
+
+{% block body %}
+<section>
+
+            <h3>Agregar juego</h3>
+            <form action="{{url_for('guardarjuego')}}" method="post">
+                <label for="nombre">Nombre:</label>
+                <input required type="text" placeholder="Nombre" name="nombre">
+                <label for="descripcion">Descripción</label>
+                <input required type="text" placeholder="Descripción" name="descripcion">
+                <label for="precio">Precio</label>
+                <input required type="number" placeholder="Precio" name="precio" step=".01">
+                <button type="submit">Guardar</button>
+            </form>
+
+</section>
+
+{% endblock %}

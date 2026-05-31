@@ -1,0 +1,37 @@
+{% extends './layout.html' %}
+
+{% block title %} {{ data.titulo }} {% endblock %}
+
+
+{% block body %}
+  <h1>Aplicaciones web sergio {{data.Bienvenida}}</h1>
+
+  <ul>
+    <li>lapiz</li>
+    <li>pluma</li>
+    <li>libreta</li>
+  </ul>
+
+<h1>{{data.bienvenida}}</h1>
+
+{% if data.edad > 18 %}
+
+    <p>Como tu edad es de {{data.edad}} entonces eres mayor de edad</p>
+
+{% else %}
+<h2>No eres mayor de edad</h2>
+{% endif %}
+
+{% if data.numerocursos > 0 %}
+
+<ul>
+    {% for c in data.cursos %}
+    <li>{{c}}</li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<h2>No hay cursos</h2>
+{% endif %}
+
+{% endblock %}

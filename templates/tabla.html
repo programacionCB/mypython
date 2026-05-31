@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+
+{% block title %} Tabla de la base de datos {% endblock %}
+
+{% block body %}
+
+<table border="1" cellpadding="5" cellspacing="5">
+    {% for nomcolum in campos %}
+    <th>{{ nomcolum }}</th>
+    {% endfor %}
+
+    {% for fila in datos %}
+        <tr>
+        {% for columna in fila %}
+            <td>{{ columna }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+<img src="{{ url_for('static', filename='gompachiro.png') }}" alt="Imagen 1">
+
+{% endblock %}
